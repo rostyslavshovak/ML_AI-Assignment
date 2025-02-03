@@ -1,0 +1,424 @@
+[
+  {
+    "number": "0",
+    "body": {
+      "parts": [
+        {
+          "type": "text",
+          "body": "ThehyperbolicCorginotebookmaybefoundat"
+        },
+        {
+          "type": "text",
+          "body": "https://mit-c25.netlify.app/notebooks/1_hyperbolic_corgi."
+        },
+        {
+          "type": "text",
+          "body": "Com pute the 2×2 Jacobian matrix for each of the following image transformations from that notebook:"
+        }
+      ],
+      "children": [
+        {
+          "parts": [
+            {
+              "type": "text",
+              "body": "(a)"
+            },
+            {
+              "type": "LaTeX",
+              "body": "\\text{rotate}(\\theta): (x,y)\\to(\\cos(\\theta)x+\\sin(\\theta)y,−\\sin(\\theta)x+\\cos(\\theta)y)"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "type": "text",
+              "body": "(b)"
+            },
+            {
+              "type": "LaTeX",
+              "body": "hyperbolic_\\text{rotate}(\\theta): (x,y)\\to(cosh(\\theta)x+sinh(\\theta)y,sinh(\\theta)x+cosh(\\theta)y)"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "type": "text",
+              "body": "(c)"
+            },
+            {
+              "type": "LaTeX",
+              "body": "\\text{nonlin\\_shear}(\\theta): (x,y)\\to(x,y+\\thetax^2) "
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "type": "text",
+              "body": "(d)"
+            },
+            {
+              "type": "LaTeX",
+              "body": "\\text{warp}(\\theta): (x,y)\\to\\text{rotate}(\\theta x^2+y^2)(x,y)"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "number": "1",
+    "body": {
+      "parts": [],
+      "children": [
+        {
+          "parts": [
+            {
+              "type": "text",
+              "body": "(a)"
+            },
+            {
+              "type": "text",
+              "body": "Suppose that L[x] is a linear operation (for x in some vector space V, with outputs L[x] in some other vector space W). If f"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "type": "text",
+              "body": "(x)"
+            },
+            {
+              "type": "LaTeX",
+              "body": "=L[x]+y for a constant y \\inW, what is f′"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "type": "text",
+              "body": "(x)"
+            },
+            {
+              "type": "text",
+              "body": "(in terms of L and/or y)?"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "type": "text",
+              "body": "(b)"
+            },
+            {
+              "type": "text",
+              "body": "Give the derivatives of f(A) = AT (transpose) and g(A) = 1+trA (trace) as special cases of the rule you derived in the previous part."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "number": "2",
+    "body": {
+      "parts": [
+        {
+          "type": "text",
+          "body": "Calculate derivatives of each of the following functions in the requested forms—as a linear operator f′"
+        }
+      ],
+      "children": [
+        {
+          "parts": [
+            {
+              "type": "text",
+              "body": "(x)"
+            },
+            {
+              "type": "text",
+              "body": "[dx], a Jacobian matrix, or a gradient ∇f —as specified in each part."
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "type": "text",
+              "body": "(a)"
+            },
+            {
+              "type": "text",
+              "body": "f"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "type": "text",
+              "body": "(x)"
+            },
+            {
+              "type": "text",
+              "body": "= xT(A+diagm"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "type": "text",
+              "body": "(x)"
+            },
+            {
+              "type": "LaTeX",
+              "body": ")2x, where the inputs x \\in \\mathbb{R}^n are vectors, the outputs are scalars, A = AT is a   x 1 constant symmetric n×n matrix \\in\\mathbb{R}^{n\\times n}, and diagm"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "type": "text",
+              "body": "(x)"
+            },
+            {
+              "type": "text",
+              "body": "denotes the n×n diagonal matrix   x 2  .  ... Give the gradient ∇f, such that f′"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "type": "text",
+              "body": "(x)"
+            },
+            {
+              "type": "text",
+              "body": "dx=(∇f)Tdx."
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "type": "text",
+              "body": "(b)"
+            },
+            {
+              "type": "text",
+              "body": "f"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "type": "text",
+              "body": "(x)"
+            },
+            {
+              "type": "text",
+              "body": "=(A+yxT)−1b, where the inputs x and outputs f"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "type": "text",
+              "body": "(x)"
+            },
+            {
+              "type": "LaTeX",
+              "body": "are n-component (column) vectors in \\mathbb{R}^n, y and b are constant vectors \\in\\mathbb{R}^n, and A is a constant n×n matrix \\in\\mathbb{R}^{n\\times n}."
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "type": "text",
+              "body": "(i)"
+            },
+            {
+              "type": "text",
+              "body": "Give f′"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "type": "text",
+              "body": "(x)"
+            },
+            {
+              "type": "text",
+              "body": "as a Jacobian matrix. (ii) If you are given A−1, then you can compute (A+yxT)−1 and hence f"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "type": "text",
+              "body": "(x)"
+            },
+            {
+              "type": "text",
+              "body": "for any x in ∼ n^2 scalar arithmeticoperations(i.e.,roughlyproportionalton^2,orincomputer-sciencetermsΘ(n^2)“complexity”), using the “Sherman–Morrison” formula (Google it). Explain how your Jacobian matrix can therefore 1 also be computed in ∼n^2 operations for any x given A−1 (i.e. give a sequence of computational steps, each of which costs no more than ∼n^2 arithmetic)."
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "type": "text",
+              "body": "(c)"
+            },
+            {
+              "type": "text",
+              "body": "f"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "type": "text",
+              "body": "(x)"
+            },
+            {
+              "type": "LaTeX",
+              "body": "= x x^T, with vector inputs x\\in\\mathbb{R}^n and matrix outputs f \\in\\mathbb{R}^{n\\times n}. Give f′"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "type": "text",
+              "body": "(x)"
+            },
+            {
+              "type": "LaTeX",
+              "body": "as a linear operator, i.e. a x^T x linear formula for f′"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "type": "text",
+              "body": "(x)"
+            },
+            {
+              "type": "text",
+              "body": "[dx]."
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "type": "text",
+              "body": "(d)"
+            },
+            {
+              "type": "text",
+              "body": "g"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "type": "text",
+              "body": "(x)"
+            },
+            {
+              "type": "LaTeX",
+              "body": "= x x^Tb, with vector inputs x\\in\\mathbb{R}^n and vector outputs f \\in\\mathbb{R}^n, where b\\in\\mathbb{R}^n is a constant vector. Give x^T x g′"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "type": "text",
+              "body": "(x)"
+            },
+            {
+              "type": "text",
+              "body": "as a Jacobian matrix."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "number": "3",
+    "body": {
+      "parts": [],
+      "children": [
+        {
+          "parts": [
+            {
+              "type": "text",
+              "body": "(a)"
+            },
+            {
+              "type": "text",
+              "body": "Argue briefly that linear functions that map n×n matrices to n×n matrices themselves form a vector space V. What is the dimension of this vector space?"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "type": "text",
+              "body": "(b)"
+            },
+            {
+              "type": "LaTeX",
+              "body": "Argue briefly that linear functions of n×n matrices of the form X \\toAX, where A is n×n, form a vector space. What is the dimension of this vector space?"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "type": "text",
+              "body": "(c)"
+            },
+            {
+              "type": "LaTeX",
+              "body": "Argue briefly why it follows that there must be infinitely many linear functions \\inV that are not of the form X \\toAX. 2 MIT OpenCourseWare"
+            },
+            {
+              "type": "text",
+              "body": "https://ocw.mit.edu"
+            },
+            {
+              "type": "text",
+              "body": "18.S096 Matrix Calculus for Machine Learning and Beyond Independent Activities Period (IAP) 2023 For information about citing these materials or our Terms of Use, visit:"
+            },
+            {
+              "type": "text",
+              "body": "https://ocw.mit.edu/terms."
+            }
+          ]
+        }
+      ]
+    }
+  }
+]
