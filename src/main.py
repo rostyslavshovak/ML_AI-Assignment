@@ -4,8 +4,9 @@ from extractor import PDFExtractor
 from processor import json_structure, postprocess_snippets
 
 def main():
-    pdf_path = os.path.join("data", "mit18_pset1.pdf")
-    output_json = os.path.join("data", "output.json")
+    project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+    pdf_path = os.path.join(project_root, "data", "mit18_pset2.pdf")
+    output_json = os.path.join(project_root, "data", "outputs_v1.json")
 
     extractor = PDFExtractor()
     text = extractor.extract_text(pdf_path)

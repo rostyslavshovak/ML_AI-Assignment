@@ -1,0 +1,330 @@
+[
+  {
+    "number": "1",
+    "body": {
+      "parts": [
+        {
+          "type": "text",
+          "body": "Suppose that A"
+        }
+      ],
+      "children": [
+        {
+          "parts": [
+            {
+              "type": "text",
+              "body": "(p)"
+            },
+            {
+              "type": "LaTeX",
+              "body": "takes a vector p\\in\\mathbb{R}^n−1 and returns the n×n tridiagonal real-symmetric matrix   a p 1 1    p 1 a 2 p 2    A"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "type": "text",
+              "body": "(p)"
+            },
+            {
+              "type": "LaTeX",
+              "body": "=  p 2 ... ...  ,     ... a p    n−1 n−1  p a n−1 n where a\\in\\mathbb{R}^n−1 is some constant vector. Now, define a scalar-valued function f"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "type": "text",
+              "body": "(p)"
+            },
+            {
+              "type": "text",
+              "body": "by f"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "type": "text",
+              "body": "(p)"
+            },
+            {
+              "type": "text",
+              "body": "= cTA"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "type": "text",
+              "body": "(p)"
+            },
+            {
+              "type": "LaTeX",
+              "body": "−1b^2 for some constant vectors b,c \\in \\mathbb{R}^n (assuming we choose p and a so that A is invertible). Note that, in practice A"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "type": "text",
+              "body": "(p)"
+            },
+            {
+              "type": "text",
+              "body": "−1b is not computed by explicitly inverting the matrix A—instead, it can be computed in Θ"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "type": "text",
+              "body": "(n)"
+            },
+            {
+              "type": "text",
+              "body": "(i.e., roughly proportional to n) arithmetic operations using Gaussian elimination that takes advantage of the “sparsity” of A (the pattern of zero entries), a “tridiagonal solve”."
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "type": "text",
+              "body": "(a)"
+            },
+            {
+              "type": "text",
+              "body": "Writedownaformulaforcomputing∂f/∂p (intermsofmatrix–vectorproductsandmatrixinverses). (Hint: 1 once you know df in terms of dA, you can get ∂f/∂p by “dividing” both sides by ∂p , so that dA becomes 1 1 ∂A/∂p .) 1"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "type": "text",
+              "body": "(b)"
+            },
+            {
+              "type": "LaTeX",
+              "body": "Outline a sequence of steps to compute both f and ∇f'(with respect to p) using only two tridiagonal solves x=A−1b and an “adjoint” solve v =A−1(something), plus Θ"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "type": "text",
+              "body": "(n)"
+            },
+            {
+              "type": "text",
+              "body": "(i.e., roughly proportional to n) additional arithmetic operations."
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "type": "text",
+              "body": "(c)"
+            },
+            {
+              "type": "LaTeX",
+              "body": "Writeaprogramimplementingyour∇f procedure(inJulia,Python,Matlab,oranylanguageyouwant)from the previous part. (You don’t need to use a fancy tridiagonal solve if you don’t know how to do this in your language; you can solve A−1(vector) inefficiently if needed using your favorite matrix libraries.) Implement a finite-difference test: Choose a,b,c,p at random, and check that ∇f ·δp≈f'(p+δp)−f"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "type": "text",
+              "body": "(p)"
+            },
+            {
+              "type": "text",
+              "body": "(to a few digits) for a randomly chosen small δp."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "number": "2",
+    "body": {
+      "parts": [
+        {
+          "type": "LaTeX",
+          "body": "Suppose that we have a two-argument function f'(x,y), where x,y and f may belong to arbitrary vector (Banach) spaces. Let’s define “partial” derivatives f and f'(also denoted ∂f and ∂f) by the linearization: x y ∂x ∂y df =f'(x+dx,y+dy)−f'(x,y)=f'(x,y)[dx]+f'(x,y)[dy], x y 1 implicitly dropping higher-order terms as usual. Compute the partial derivatives of the following functions:"
+        }
+      ],
+      "children": [
+        {
+          "parts": [
+            {
+              "type": "text",
+              "body": "(a)"
+            },
+            {
+              "type": "LaTeX",
+              "body": "f(A,x)=A−1x for n×n matrices A\\in\\mathbb{R}^{n\\times n} and vectors x\\in\\mathbb{R}^n: give f as a linear operator, and f as a A x Jacobian matrix."
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "type": "text",
+              "body": "(b)"
+            },
+            {
+              "type": "LaTeX",
+              "body": "f(A,B) = tr(ATBA), for matrices A,B \\in \\mathbb{R}^{n\\times n}: give the gradients ∇ f and ∇ f such that f [dA] = A B A ∇ f ·dA and f [dB]=∇ f ·dB under the Frobenius inner product X·Y =tr(XTY)=tr(YTX). A B B"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "number": "3",
+    "body": {
+      "parts": [
+        {
+          "type": "text",
+          "body": "IfSisanm×mreal-symmetricmatrixwitha“simple” (multiplicity=1)eigenvalueλandcorrespondingeigenvector q (Sq = λq), normalized to qTq = 1, then the “Hellman–Feynman theorem” states that dλ = qTdSq for a change dS in the matrix S."
+        }
+      ],
+      "children": [
+        {
+          "parts": [
+            {
+              "type": "text",
+              "body": "(a)"
+            },
+            {
+              "type": "text",
+              "body": "Derive the Hellman–Feynman theorem by considering the differentials of both sides of the equations d(λ = qTSq) and d(qTq =1)."
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "type": "text",
+              "body": "(b)"
+            },
+            {
+              "type": "text",
+              "body": "What is the gradient ∇λ with respect to S, for the usual Frobenius inner product ∇λ·dS =tr((∇λ)TdS)"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "number": "4",
+    "body": {
+      "parts": [
+        {
+          "type": "text",
+          "body": "The Jacobian determinant (sometimes called simply “the Jacobian,” clashing with the concept of the Jacobian matrix)isthedeterminantoftheJacobianmatrix. Specificallyiff"
+        }
+      ],
+      "children": [
+        {
+          "parts": [
+            {
+              "type": "text",
+              "body": "(x)"
+            },
+            {
+              "type": "LaTeX",
+              "body": "isafunctionfrom\\mathbb{R}^n to\\mathbb{R}^n and(∂fi) ∂xj 1≤i,j≤n is the Jacobian matrix f′"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "type": "text",
+              "body": "(x)"
+            },
+            {
+              "type": "text",
+              "body": ", then its determinant detf′"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "type": "text",
+              "body": "(x)"
+            },
+            {
+              "type": "text",
+              "body": "is the Jacobian determinant. Sometimes we take the absoute value and not worry too much about the sign."
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "type": "text",
+              "body": "(a)"
+            },
+            {
+              "type": "text",
+              "body": "The Jacobian determinant represents the local scaling of volume. Compute the Jacobian determinant of the hyperbolic rotation defined in Pset 1, problem 1b, in simplest form. Use this to describe how a little square around a point generally transforms with a hyperbolic rotation."
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "type": "text",
+              "body": "(b)"
+            },
+            {
+              "type": "LaTeX",
+              "body": "There are many ways to equivalently take a scalar function f'(α) and extend it to a matrix function F(M), which takes in a square matrix and returns a square matrix of the same size. The simplest is to define f'(M)=Xf'(Λ)X−1, where M =XΛX−1 is an eigen-decomposition of M (and use continuity to include non-diagonalizable matrices). Here, f'(Λ) denotes the application of a scalar function f'(λ) to the eigenvalues λ (on the diagonal of Λ). (e.g., you’ve probably seen eM defined in terms of eλ.) Onecouldthenwritef′(M)asanexplicitn^2×n2Jacobianmatrix(e.g. viavec(dM)andKroneckerproducts), and could then compute its determinant."
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "type": "text",
+              "body": "(i)"
+            },
+            {
+              "type": "LaTeX",
+              "body": "Write a computer program (in any language) to find the 9×9 Jacobian matrix of f'(M) and then the Jacobian determinant by either finite differences or by using automatic differentiation, for f'(λ) being eλ, λ2, and \\sin(λ) on the 3×3 matrix M =[014;101;410] with entries M =(i−j)2. i,j (ii) ComparewiththefollowingknowntheoreticalformulafortheJacobiandeterminantforascalarfunction f'(λ) applied to a diagonalizable matrix M, in terms of M’s eigenvalues λ:  i<j|f'(λ i)−f'(λ j)|2  f′(λ )  |λ −λ |2 i i<j i j i 2 MIT OpenCourseWare"
+            },
+            {
+              "type": "text",
+              "body": "https://ocw.mit.edu"
+            },
+            {
+              "type": "text",
+              "body": "18.S096 Matrix Calculus for Machine Learning and Beyond Independent Activities Period (IAP) 2023 For information about citing these materials or our Terms of Use, visit:"
+            },
+            {
+              "type": "text",
+              "body": "https://ocw.mit.edu/terms."
+            }
+          ]
+        }
+      ]
+    }
+  }
+]
