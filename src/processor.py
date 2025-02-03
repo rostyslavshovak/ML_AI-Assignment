@@ -1,14 +1,4 @@
-import pdfplumber
 import re
-import json
-
-def extract_text(pdf_path):
-    lines = []
-    with pdfplumber.open(pdf_path) as pdf:
-        for page in pdf.pages:
-            for ln in (page.extract_text() or "").splitlines():
-                lines.append(re.sub(r"-\s*$", "", ln))
-    return re.sub(r"\s+", " ", " ".join(lines)).strip()
 
 def split_problems(text):
     pattern = r"(Problem\s+\d+.*?)(?=Problem\s+\d+|$)"
@@ -67,6 +57,10 @@ def json_structure(raw_text):
     return output
 
 def process_snippet(snippet):
+    snippet = re.sub(r"f\s*\(", "f(", snippet)
+    snippet = re.sub(r"\)\s*\[dx\]", ")[dx]", snippet)
+    snippet = re.sub(r"([a-zA-Z])\s+T\b", r"\1^T", snippet)
+
     snippet = snippet.replace("->", r"\to").replace("→", r"\to")
     snippet = snippet.replace("θ", r"\theta").replace("sin(", r"\sin(").replace("cos(", r"\cos(")
     snippet = snippet.replace("￿", "")
@@ -77,6 +71,9 @@ def process_snippet(snippet):
     snippet = re.sub(r"\(cid:\d+\)", "", snippet)
     snippet = re.sub(r'([a-zA-Z])2\b', r'\1^2', snippet)
 
+    if not snippet.lstrip().startswith("f("):
+        snippet = snippet.replace("f(", r"f'(")
+
     if "rotate(" in snippet:
         snippet = snippet.replace("rotate(", r"\text{rotate}(")
     if "hyperbolic_rotate(" in snippet:
@@ -85,7 +82,8 @@ def process_snippet(snippet):
         snippet = snippet.replace("nonlin_shear(", r"\text{nonlin\_shear}(")
     if "warp(" in snippet:
         snippet = snippet.replace("warp(", r"\text{warp}(")
-    math_triggers = ["\\in", "\\to", "\\mathbb{R}", "x^T"]
+
+    math_triggers = ["\\in", "\\to", "\\mathbb{R}", "x^T", "f(", "f'("]
     is_math = any(trigger in snippet for trigger in math_triggers)
     return snippet, is_math
 
@@ -96,19 +94,9 @@ def postprocess_snippets(data):
             part["body"] = txt
             if is_math:
                 part["type"] = "LaTeX"
-
         for child in question["body"]["children"]:
             for part in child["parts"]:
                 txt, is_math = process_snippet(part["body"])
                 part["body"] = txt
                 if is_math:
                     part["type"] = "LaTeX"
-def parse_pdf_to_json(pdf_path, output_json):
-    text = extract_text(pdf_path)
-    data = json_structure(text)
-    postprocess_snippets(data)
-    with open(output_json, "w", encoding="utf-8") as f:
-        json.dump(data, f, indent=2, ensure_ascii=False)
-
-if __name__ == "__main__":
-    parse_pdf_to_json("mit18_pset1.pdf", "data\output.json")

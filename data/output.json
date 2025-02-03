@@ -13,7 +13,7 @@
         },
         {
           "type": "text",
-          "body": "Com pute the 2×2 Jacobian matrix for each of the following image transformations from that notebook:"
+          "body": "Com- pute the 2×2 Jacobian matrix for each of the following image transformations from that notebook:"
         }
       ],
       "children": [
@@ -116,8 +116,8 @@
               "body": "(b)"
             },
             {
-              "type": "text",
-              "body": "Give the derivatives of f(A) = AT (transpose) and g(A) = 1+trA (trace) as special cases of the rule you derived in the previous part."
+              "type": "LaTeX",
+              "body": "Give the derivatives of f'(A) = AT (transpose) and g(A) = 1+trA (trace) as special cases of the rule you derived in the previous part."
             }
           ]
         }
@@ -274,7 +274,7 @@
             },
             {
               "type": "text",
-              "body": "for any x in ∼ n^2 scalar arithmeticoperations(i.e.,roughlyproportionalton^2,orincomputer-sciencetermsΘ(n^2)“complexity”), using the “Sherman–Morrison” formula (Google it). Explain how your Jacobian matrix can therefore 1 also be computed in ∼n^2 operations for any x given A−1 (i.e. give a sequence of computational steps, each of which costs no more than ∼n^2 arithmetic)."
+              "body": "for any x in ∼ n^2 scalar- arithmeticoperations(i.e.,roughlyproportionalton^2,orincomputer-sciencetermsΘ(n^2)“complexity”), using the “Sherman–Morrison” formula (Google it). Explain how your Jacobian matrix can therefore 1 also be computed in ∼n^2 operations for any x given A−1 (i.e. give a sequence of computational steps, each of which costs no more than ∼n^2 arithmetic)."
             }
           ]
         },
